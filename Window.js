@@ -4,7 +4,7 @@ const {app, BrowserWindow} = require('electron')
 
 const defaultProps = {
   width: 500,
-  height: 800,
+  height: 500,
   show: false
 }
 
@@ -16,7 +16,9 @@ class Window extends BrowserWindow {
 
     // load the HTML and open devtools
     this.loadFile(file)
-    // this.webContents.openDevTools()
+
+    // this sets the menu to not show
+    this.setMenu(null)
 
     // Show window when ready to prevent flickering
     this.once('ready-to-show', () => {
